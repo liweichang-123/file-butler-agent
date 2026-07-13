@@ -82,6 +82,3 @@ file_butler/
 最大文件数限制为 500 个
 
 需要 Ollama 服务在后台运行
-
-许可证
-MIT
