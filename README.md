@@ -1,9 +1,12 @@
-📁 本地文件管家智能体
+# 📁 本地文件管家智能体
+
 基于 AI 智能体的本地文件整理工具，自动扫描目录、分类文件、生成整理建议。
 
-🚀 快速开始
-1. 安装 Ollama 并下载模型
-bash
+## 🚀 快速开始
+
+### 1. 安装 Ollama 并下载模型
+
+```bash
 # 下载安装 Ollama
 # https://ollama.com/download
 
@@ -19,16 +22,26 @@ pip install -r requirements.txt
 
 bash
 cp .env.example .env
-4. 启动 Web 界面
+4. 一键运行（推荐）
+bash
+conda activate file-butler
+python main.py
+然后根据提示输入 1 或 2：
+
+输入 1 → 打开 Web 界面
+
+输入 2 → 命令行测试
+
+5. 直接启动 Web 界面
 bash
 conda activate file-butler
 python -m src.app
 浏览器访问：http://127.0.0.1:7860
 
-5. 命令行测试（无需浏览器）
+6. 直接命令行测试
 bash
 python -m src.workflow .
-6. 运行自动化测试
+7. 运行自动化测试
 bash
 pytest tests/test_tools.py -v
 功能特性
@@ -54,17 +67,18 @@ pytest（自动化测试）
 项目结构
 text
 file_butler/
+├── main.py              # 一键运行入口
 ├── src/
-│   ├── app.py              # Web 界面入口
-│   ├── workflow.py         # 智能体工作流
-│   ├── tools.py            # 工具函数（含 MCP 契约）
-│   ├── guardrails.py       # 安全护栏
-│   └── model_client.py     # 模型客户端
+│   ├── app.py           # Web 界面入口
+│   ├── workflow.py      # 智能体工作流
+│   ├── tools.py         # 工具函数（含 MCP 契约）
+│   ├── guardrails.py    # 安全护栏
+│   └── model_client.py  # 模型客户端
 ├── tests/
-│   └── test_tools.py       # 自动化测试
+│   └── test_tools.py    # 自动化测试
 ├── docs/
-│   └── tool_contracts.md   # MCP 风格工具契约
-├── .env.example            # 环境变量模板
+│   └── tool_contracts.md # MCP 风格工具契约
+├── .env.example         # 环境变量模板
 ├── requirements.txt
 └── README.md
 安全说明
